@@ -59,16 +59,16 @@ WSL2에서 별도로 Docker 인스턴스를 설치하고 실행할수 있지만,
 
 #### Docker Desktop설치 및 wls2 설정
 1. [docker desktop](https://www.docker.com/products/docker-desktop/) 공식홈페이지에서 [Download for Windows]를 클릭하여 다운로드하고 설치합니다.
-<img src="/assets/images/penpot/iamges_2.JPG">
+![iamges_2.JPG](/assets/images/penpot/iamges_2.JPG)
 
 2. Docker Desktop 실행후 작업 표시줄의 숨겨진 아이콘 메뉴에서 Docker 아이콘을 선택합니다. 아이콘을 마우스 오른쪽 단추로 클릭하여 Docker 명령 메뉴를 표시하고 "설정"을 선택합니다.
-<img src="/assets/images/penpot/iamges_3.JPG">
+![iamges_3.JPG](/assets/images/penpot/iamges_3.JPG)
 
 3. 설정>일반에서 "WSL 2 기반 엔진 사용"이 선택되어 있는지 확인합니다.
-<img src="/assets/images/penpot/iamges_4.JPG">
+![iamges_4.JPG](/assets/images/penpot/iamges_4.JPG)
 
 4. 설정>리소스>WSL 통합으로 이동하여 Docker 통합을 사용하도록 설정하려는 설치된 WSL 2 배포판에서 선택합니다.
-<img src="/assets/images/penpot/images_5.JPG"></img>
+![iamges_5.JPG](/assets/images/penpot/images_5.JPG)
 
 5. Docker가 설치되었는지 확인하려면 PowerShell에서 확인을 합니다.
     ```
@@ -91,10 +91,10 @@ Penpot은 Docker compose(v2)라는 Docker 컨테이너들을 정의하고 실행
     ```
    wget https://raw.githubusercontent.com/penpot/penpot/main/docker/images/docker-compose.yaml
     ```
-    <img src="/assets/images/penpot/iamges_6.JPG">
+    ![iamges_6.JPG](/assets/images/penpot/images_6.JPG)
 
     * 실질적으로 ubuntu의 파일경로는 window에서 가상시스템을 뛰운거기때문에 파일탐색기를 열어보면 확인하실수있습니다.(Ubuntu 실행명령어에서 'll'을 쳤을때 실제 경로예요~!)
-    <img src="/assets/images/penpot/iamges_7.JPG">
+    ![iamges_7.JPG](/assets/images/penpot/images_7.JPG)
 
 2. penpot 서비스 실행하기 
     * 항상 docker compose를 통하여 명령어(cli)를 실행할땐 'Docker Desktop'파일이 실행되고있어야합니다.
@@ -103,7 +103,7 @@ Penpot은 Docker compose(v2)라는 Docker 컨테이너들을 정의하고 실행
     ```
    docker compose -p penpot -f docker-compose.yaml up -d
     ```
-    <img src="/assets/images/penpot/iamges_8.JPG">
+    ![iamges_8.JPG](/assets/images/penpot/images_8.JPG)
 3. penpot 서비스 실행 중지
     ```
    docker compose -p penpot -f docker-compose.yaml down
@@ -125,21 +125,21 @@ penpot의 서비스를 활성화할때는 'Docker Compose'를 사용하여 펜�
 [docker-compose.yaml](/assets/images/penpot/docker-compose.yaml)
 
 * 이렇게 옵션을 설정하였다 계정생성 버튼은 없어지고 '깃랩(GitLab)' 버튼이 생겼을겁니다.
-<img src='/assets/images/penpot/iamges_9.JPG'>
+![iamges_9.JPG](/assets/images/penpot/images_9.JPG)
 
 ### 깃랩에 penpot 인증할 애플리케이션 생성후 docker-compose.yaml 인증 등록
 1. 깃랩 로그인 - 사용자 설정 - 어플리케이션 - [새 애플리케이션 추가]
-<img src='/assets/images/penpot/iamges_10.JPG'>
+![iamges_10.JPG](/assets/images/penpot/images_10.JPG)
     * 이름은 : Penpot
     * Redirect URL은 : http://localhost/api/auth/oauth/gitlab/callback
     * 옵션 체크(선택) : read_user, openid, profile, email
-    <img src='/assets/images/penpot/iamges_11.JPG'>
+    ![iamges_11.JPG](/assets/images/penpot/images_11.JPG)
     여기서 Redirect URL는 깃랩을통해 로그인후 파라미터로 접속할 URI입니다. <br>
     그러니 센스있으셨던분은 'localhost'가아닌 자신의 펜팟설치한 IP로 기입하셔야한다는걸 눈치채셨을겁니다.<br>
 
 2. 인증키 복사
 * 애플리케이션 ID 와 비밀키를 복사를 합니다.
- <img src='/assets/images/penpot/iamges_12.JPG'>
+ ![iamges_12.JPG](/assets/images/penpot/images_12.JPG)
 * 여기서 복사한 내용은 'docker-compose.yaml'파일에서 'PENPOT_GITLAB_CLIENT_ID, PENPOT_GITLAB_CLIENT_SECRET' 에 입력후 저장한후 penpot 서비스를 재실행합니다.
 
     ```
@@ -153,4 +153,4 @@ penpot의 서비스를 활성화할때는 'Docker Compose'를 사용하여 펜�
     ```
 
 * 마지막으로 서비스 접속후 - [깃랩(GitLab)] 클릭 - 인증 - 로그인하면 끝 ~!
-<img src="/assets/images/penpot/images_13.JPG">
+![iamges_13.JPG](/assets/images/penpot/images_13.JPG)
