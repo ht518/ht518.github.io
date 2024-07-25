@@ -1,10 +1,7 @@
 ---
-layout: categories
-title:  "Welcome to Jekyll!"
+category: 목업
+title:  "Penpot Inastall"
 ---
 
-# 안녕
+{% link _posts/_penpot/2024-07-25-penpot-install.md %}
 
-**Hello world**, this is my first Jekyll blog post.
-
-I hope you like it!
