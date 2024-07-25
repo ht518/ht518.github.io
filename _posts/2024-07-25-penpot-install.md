@@ -59,13 +59,13 @@ WSL2에서 별도로 Docker 인스턴스를 설치하고 실행할수 있지만,
 
 #### Docker Desktop설치 및 wls2 설정
 1. [docker desktop](https://www.docker.com/products/docker-desktop/) 공식홈페이지에서 [Download for Windows]를 클릭하여 다운로드하고 설치합니다.
-![iamges_2.JPG](/assets/images/penpot/iamges_2.JPG)
+![iamges_2.JPG](/assets/images/penpot/images_2.JPG)
 
 2. Docker Desktop 실행후 작업 표시줄의 숨겨진 아이콘 메뉴에서 Docker 아이콘을 선택합니다. 아이콘을 마우스 오른쪽 단추로 클릭하여 Docker 명령 메뉴를 표시하고 "설정"을 선택합니다.
-![iamges_3.JPG](/assets/images/penpot/iamges_3.JPG)
+![iamges_3.JPG](/assets/images/penpot/images_3.JPG)
 
 3. 설정>일반에서 "WSL 2 기반 엔진 사용"이 선택되어 있는지 확인합니다.
-![iamges_4.JPG](/assets/images/penpot/iamges_4.JPG)
+![iamges_4.JPG](/assets/images/penpot/images_4.JPG)
 
 4. 설정>리소스>WSL 통합으로 이동하여 Docker 통합을 사용하도록 설정하려는 설치된 WSL 2 배포판에서 선택합니다.
 ![iamges_5.JPG](/assets/images/penpot/images_5.JPG)
