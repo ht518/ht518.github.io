@@ -25,7 +25,7 @@ WSL2에서 별도로 Docker 인스턴스를 설치하고 실행할수 있지만,
 
 #### wls2 활성화후 Windows에 Linux를 설치
 1. window - PowerShell - 관리자로 실행을 시켜줍니다.
-<img src= "/assets/images/penpot/images_1.JPG">
+![images_1.JPG](/assets/images/penpot/images_1.JPG)
 
 2. Powershell
     * WSL 기능 활성화
