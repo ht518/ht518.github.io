@@ -3,5 +3,5 @@ category: 목업
 title:  "Penpot Inastall"
 ---
 
-{% link _posts/_penpot/2024-07-25-penpot-install.md %}
+{% link _posts/2024-07-25-penpot-install.md %}
 
