@@ -108,3 +108,51 @@ Penpot은 Docker compose(v2)라는 Docker 컨테이너들을 정의하고 실행
     ```
    docker compose -p penpot -f docker-compose.yaml down
     ```
+
+### Penpot 구성하기
+penpot의 서비스를 활성화할때는 'Docker Compose'를 사용하여 펜팟의 컨테이너의 이미지, 환경 변수, 볼륨, 네트워크 설정 등을 명시하는 파일인 'docker-compose.yaml'을 통해 실행시켜서 서비스를 활성화했습니다. <br>
+[공식사이트](https://help.penpot.app/technical-guide/developer/) 가이드에 따라 penpot의 구성을 gitlab을 사용하여 인증을 구성하여 로그인할수 있게 옵션을 설정하여 사용하겠습니다.
+
+### docker-compose.yaml 파일 설정하기
+저는 wget을 통해 'docker-compose.yaml'을 받았습니다. 파일경로는 '\\wsl.localhost\Ubuntu\home\gluesys' 하위에속해있구요. <br>
+해당파일의 확장자는 'yaml'파일이기때문에 'docker-compose.yaml'파일의 속성에 들어가서 연결프로그램을 '메모장'으로 변경후 파일내용을 수정을 했습니다.
+
+* 수정된 내용은 'penpot-frontend'와 'penpot-backend'입니다. 
+    * 첫번째로 'penpot-frontend'밑에줄에보면 PENPOT_FLAGS라는 부분이있습니다. 여기서 'disable-secure-session-cookies disable-login enable-login-with-gitlab disable-registration'로 정의했고 
+    * 두번째는 'penpot-backend'밑에줄에 PENPOT_FLAGS에다가 'disable-secure-session-cookies disable-login enable-login-with-gitlab' 로 정의했구요 
+    * 세번째는 Gitlab에 인증관련된 내용 'PENPOT_GITLAB_BASE_URI, PENPOT_GITLAB_CLIENT_ID, PENPOT_GITLAB_CLIENT_SECRET'를 설정해주었습니다.
+<details>
+    <summary>docker-compose.yaml</summary>
+
+</details>
+
+* 이렇게 옵션을 설정하였다 계정생성 버튼은 없어지고 '깃랩(GitLab)' 버튼이 생겼을겁니다.
+<img src='/assets/images/penpot/iamges_9.JPG'>
+
+### 깃랩에 penpot 인증할 애플리케이션 생성후 docker-compose.yaml 인증 등록
+1. 깃랩 로그인 - 사용자 설정 - 어플리케이션 - [새 애플리케이션 추가]
+<img src='/assets/images/penpot/iamges_10.JPG'>
+    * 이름은 : Penpot
+    * Redirect URL은 : http://localhost/api/auth/oauth/gitlab/callback
+    * 옵션 체크(선택) : read_user, openid, profile, email
+    <img src='/assets/images/penpot/iamges_11.JPG'>
+    여기서 Redirect URL는 깃랩을통해 로그인후 파라미터로 접속할 URI입니다. <br>
+    그러니 센스있으셨던분은 'localhost'가아닌 자신의 펜팟설치한 IP로 기입하셔야한다는걸 눈치채셨을겁니다.<br>
+
+2. 인증키 복사
+* 애플리케이션 ID 와 비밀키를 복사를 합니다.
+ <img src='/assets/images/penpot/iamges_12.JPG'>
+* 여기서 복사한 내용은 'docker-compose.yaml'파일에서 'PENPOT_GITLAB_CLIENT_ID, PENPOT_GITLAB_CLIENT_SECRET' 에 입력후 저장한후 penpot 서비스를 재실행합니다.
+
+    ```
+    # Backend & Frontend
+    PENPOT_FLAGS="[...] enable-login-with-gitlab"
+
+    # Backend only
+    PENPOT_GITLAB_BASE_URI=https://gitlab.com
+    PENPOT_GITLAB_CLIENT_ID=<client-id>
+    PENPOT_GITLAB_CLIENT_SECRET=<client-secret>
+    ```
+
+* 마지막으로 서비스 접속후 - [깃랩(GitLab)] 클릭 - 인증 - 로그인하면 끝 ~!
+<img src='/assets/images/penpot/iamges_13.JPG'>
