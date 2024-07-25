@@ -121,10 +121,8 @@ penpot의 서비스를 활성화할때는 'Docker Compose'를 사용하여 펜�
     * 첫번째로 'penpot-frontend'밑에줄에보면 PENPOT_FLAGS라는 부분이있습니다. 여기서 'disable-secure-session-cookies disable-login enable-login-with-gitlab disable-registration'로 정의했고 
     * 두번째는 'penpot-backend'밑에줄에 PENPOT_FLAGS에다가 'disable-secure-session-cookies disable-login enable-login-with-gitlab' 로 정의했구요 
     * 세번째는 Gitlab에 인증관련된 내용 'PENPOT_GITLAB_BASE_URI, PENPOT_GITLAB_CLIENT_ID, PENPOT_GITLAB_CLIENT_SECRET'를 설정해주었습니다.
-<details>
-    <summary>docker-compose.yaml</summary>
 
-</details>
+[docker-compose.yaml](/assets/images/penpot/docker-compose.yaml)
 
 * 이렇게 옵션을 설정하였다 계정생성 버튼은 없어지고 '깃랩(GitLab)' 버튼이 생겼을겁니다.
 <img src='/assets/images/penpot/iamges_9.JPG'>
@@ -155,4 +153,4 @@ penpot의 서비스를 활성화할때는 'Docker Compose'를 사용하여 펜�
     ```
 
 * 마지막으로 서비스 접속후 - [깃랩(GitLab)] 클릭 - 인증 - 로그인하면 끝 ~!
-<img src='/assets/images/penpot/iamges_13.JPG'>
+<img src="/assets/images/penpot/images_13.JPG">
