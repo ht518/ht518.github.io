@@ -113,7 +113,7 @@ Penpot은 Docker compose(v2)라는 Docker 컨테이너들을 정의하고 실행
 penpot의 서비스를 활성화할때는 'Docker Compose'를 사용하여 펜팟의 컨테이너의 이미지, 환경 변수, 볼륨, 네트워크 설정 등을 명시하는 파일인 'docker-compose.yaml'을 통해 실행시켜서 서비스를 활성화했습니다. <br>
 [공식사이트](https://help.penpot.app/technical-guide/developer/) 가이드에 따라 penpot의 구성을 gitlab을 사용하여 인증을 구성하여 로그인할수 있게 옵션을 설정하여 사용하겠습니다.
 
-### docker-compose.yaml 파일 설정하기
+#### docker-compose.yaml 파일 설정하기
 저는 wget을 통해 'docker-compose.yaml'을 받았습니다. 파일경로는 '\\wsl.localhost\Ubuntu\home\gluesys' 하위에속해있구요. <br>
 해당파일의 확장자는 'yaml'파일이기때문에 'docker-compose.yaml'파일의 속성에 들어가서 연결프로그램을 '메모장'으로 변경후 파일내용을 수정을 했습니다.
 
@@ -127,7 +127,7 @@ penpot의 서비스를 활성화할때는 'Docker Compose'를 사용하여 펜�
 * 이렇게 옵션을 설정하였다 계정생성 버튼은 없어지고 '깃랩(GitLab)' 버튼이 생겼을겁니다.
 ![images_9.JPG](/assets/images/penpot/images_9.JPG)
 
-### 깃랩에 penpot 인증할 애플리케이션 생성후 docker-compose.yaml 인증 등록
+#### 깃랩에 penpot 인증할 애플리케이션 생성후 docker-compose.yaml 인증 등록
 1. 깃랩 로그인 - 사용자 설정 - 어플리케이션 - [새 애플리케이션 추가]
 ![images_10.JPG](/assets/images/penpot/images_10.JPG)
     * 이름은 : Penpot
