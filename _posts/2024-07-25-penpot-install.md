@@ -135,7 +135,7 @@ penpot의 서비스를 활성화할때는 'Docker Compose'를 사용하여 펜�
     * 옵션 체크(선택) : read_user, openid, profile, email
     ![images_11.JPG](/assets/images/penpot/images_11.JPG)
     여기서 Redirect URL는 깃랩을통해 로그인후 파라미터로 접속할 URI입니다. <br>
-    그러니 센스있으셨던분은 'localhost'가아닌 자신의 펜팟설치한 IP로 기입하셔야한다는걸 눈치채셨을겁니다.<br>
+    센스있는 사용자라면 'localhost'가아닌 자신의 펜팟설치한 IP로 기입하셔야한다는걸 눈치채셨을겁니다.<br>
 
 2. 인증키 복사
 * 애플리케이션 ID 와 비밀키를 복사를 합니다.
@@ -154,3 +154,74 @@ penpot의 서비스를 활성화할때는 'Docker Compose'를 사용하여 펜�
 
 * 마지막으로 서비스 접속후 - [깃랩(GitLab)] 클릭 - 인증 - 로그인하면 끝 ~!
 ![images_13.JPG](/assets/images/penpot/images_13.JPG)
+
+
+## '펜팟(Penpot)' 활용하기
+이제는 '펜팟(Penpot)'에서 제공하는 라이브러리를 다운받고 해당 디자인 템플릿을 활용해 간단한 로그인페이지의 목업작업을 하는 방법을 소개하도록 하겠습니다. <br>
+라이브러리를 다운받고, 라이브러리안에 마음에 드는 템플릿을 공유해 개인 프로젝트에서 해당 디자인을 활용해서 작업을 할 것입니다. <br>
+[펜팟에서 제공되는 라이브러리](https://penpot.app/libraries-templates) 중에서 저는 'Firefox mockup'와 'Penpot Design System' 이라는 라이브러리를 사용하겠습니다.
+
+### [라이브러리](https://penpot.app/libraries-templates) 다운로드
+1. 해당 홈페이지에서 'Firefox mockup'와 'Penpot Design System' 를 다운받습니다.
+![images_14.JPG](/assets/images/penpot/images_14.JPG)
+![images_15.JPG](/assets/images/penpot/images_15.JPG)
+
+2. 다운로드한 라이브러리를 추가를 해줍니다.
+* 로그인 - [초안] - 상단 왼쪽 설정 - [Import Penpot files]를 클릭해줍니다.
+![images_16.JPG](/assets/images/penpot/images_16.JPG)
+* 다운받은 라이브러리를 선택후 'Import'를 해줍니다.
+ * 인내심을갖고 등록된후 허가까지해주셔야해요~!
+![images_17.JPG](/assets/images/penpot/images_17.JPG)
+![images_18.JPG](/assets/images/penpot/images_18.JPG)
+![images_19.JPG](/assets/images/penpot/images_19.JPG)
+* 해당 라이브러리가 추가가 되었다면 추가된 라이브러리가 나타날것입니다.
+![images_20.JPG](/assets/images/penpot/images_20.JPG)
+
+3. 디자인 템플릿을 공유하기
+개인 프로젝트에서 사용하기위해 'Firefox mockup'에서 인터넷창 디자인을 선택해서 공유를 해보겠습니다.
+
+* 'Firefox mockup'라이브러리를 선택합니다.(더블클릭을 해주셔야해요~!)
+![images_21.JPG](/assets/images/penpot/images_21.JPG)
+![images_22.JPG](/assets/images/penpot/images_22.JPG)
+
+* [LAYERS] - [templates] - [light] 우클릭 - [Create component] 클릭을 해줍니다.
+저는 하얀색을 좋아하기때문에 밝은색 인터넷창의 디자인을 선택할게요~!
+![images_23.JPG](/assets/images/penpot/images_23.JPG)
+
+* [ASSETS] - 좌측하단[COMPONENTS] 에서 방금 선택한 디자인이 추가가 되었는지 확인합니다.
+![images_24.JPG](/assets/images/penpot/images_24.JPG)
+
+자 이제는 로그인폼에 대한 디자인을 선택해서 공유를 해보겠습니다. 똑같은 방법이니 빠르게 넘어가셔도되요~! <br>
+
+* 'Penpot Design System' 라이브러리를 선택합니다.
+![images_25.JPG](/assets/images/penpot/images_25.JPG)
+![images_26.JPG](/assets/images/penpot/images_26.JPG)
+
+* [LAYERS] - [PAGES] - [Login] 우클릭 - [Create component] 클릭을 해줍니다.
+![images_27.JPG](/assets/images/penpot/images_27.JPG)
+* [ASSETS] - 좌측하단[COMPONENTS] 에서 방금 선택한 디자인이 추가가 되었는지 확인합니다.
+![images_28.JPG](/assets/images/penpot/images_28.JPG)
+
+* 대쉬보드 페이지 - [초안] - [해당 라이브러리 우클릭] - [공유 라이브러리로 추가하기] 클릭을 해줍니다.
+![images_29.JPG](/assets/images/penpot/images_29.JPG)
+
+4. 개인 프로젝트에서 공유로 설정한 디자인으로 목업작업
+자 다시그러면 대시보드(매인페이지) 페이지로 돌아와 프로젝트를 생성해보겠습니다.
+* [NEW PROJECT] 버튼 클릭후 생성된 프로젝트를 클릭해줍니다.(저는 'Login' 이라 할게요!)
+![images_30.JPG](/assets/images/penpot/images_30.JPG)
+* [ASSETS] - [LIBRARIES] - 'Firefox mockup'와 'Penpot Design System' 추가를 해줍니다.
+![images_31.JPG](/assets/images/penpot/images_31.JPG)
+* 공유된 라이브러리를 확인합니다.
+![images_32.JPG](/assets/images/penpot/images_32.JPG)
+* 'Firefox mockup' 라이브러리에 생성한 인터넷창의 디자인 컴포넌트를 가운데 화면으로 드래그해줍니다.
+![images_33.JPG](/assets/images/penpot/images_33.JPG)
+자 이러면 인터넷창의 디자인 UI 목업이 추가를 하였으니 penpot의 로그인 디자인도 입혀보겠습니다.
+* 'Penpot Design System' 라이브러리에 생성한 로그인폼 디자인 컴포넌트를 가운데 화면으로 드래그해줍니다.
+![images_34.JPG](/assets/images/penpot/images_34.JPG)
+
+로그인폼 디자인과 인터넷창디자인의 규격이 안맞을텐데 이부분은 잘 사이즈맞춰서 해주셔야해요~!
+* 로그인폼 목업작업
+![images_35.JPG](/assets/images/penpot/images_35.JPG)
+
+# 마치면서
+이 글에서 다루지 못한 'pnepot'의 기능과 디자인작업에 대한 내용들이 많이 있습니다. <br>
