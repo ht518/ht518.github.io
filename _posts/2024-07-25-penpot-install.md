@@ -233,3 +233,10 @@ penpot의 서비스를 활성화할 때는 'Docker Compose'를 사용하여 펜�
 * 한글로 text 편집 시엔 천천히 입력하셔야 합니다.
 
 그렇지만 개발 중심의 조직이라면 별도의 비용 없이 자체적으로 호스팅 하여 사용할 수 있다는 점에선 최고의 장점이 않을까 생각합니다.
+
+## 참고 링크 및 자료
+* [Penpot 공식사이트](https://penpot.app/)
+* [Penpot Self-host](https://penpot.app/self-host)
+* [Penpot 사용자가이드](https://help.penpot.app/user-guide/libraries/)
+* [WSL 2에서 Docker 원격 컨테이너 시작](https://learn.microsoft.com/ko-kr/windows/wsl/tutorials/wsl-containers)
+* [Penpot 라이브러리](https://penpot.app/libraries-templates)
