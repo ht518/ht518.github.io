@@ -1,24 +1,24 @@
 # 디자인 도구 '펜팟(Penpot)' 설치부터 활용까지
 
 안녕하세요?<br>
-글루시스에 웹개발팀에서 근무하고있는 이현태입니다.<br>
-프로젝트 개발과정중 애플리케이션 또는 웹페이지의 레이아웃과 요소를 보여주기 위해 사용되는 디자인의 시각적 표현 또는 프로토타입을 목업이라합니다. <br>
+글루시스에 웹 개발팀에서 근무하고 있는 이현태입니다.<br>
+프로젝트 개발과정 중 애플리케이션 또는 웹페이지의 레이아웃과 요소를 보여주기 위해 사용되는 디자인의 시각적 표현 또는 프로토타입을 목업이라 합니다. <br>
 목업은 개발로 넘어가기 전에 애플리케이션 또는 웹사이트의 제품이나 디자인을 시각적으로 표현하는 것이므로 
-이러한 디자인작업을 하는 도구인 '펜팟(Penpot)'을 소개하고자 합니다.<br>
+이러한 디자인 작업을 하는 도구인 '펜팟(Penpot)'을 소개하고자 합니다.<br>
 펜팟은 무료 오픈소스로, Figma와 유사한 기능을 제공하며, 사용자들 사이에서 Figma보다 더 흥미로운 도구로 평가되기도 합니다. <br>
-디자인 도구로써 다양한 기능을 제공하며, 디자인 프로젝트를 효율적으로 관리할수 있습니다.<br>
-저는 완전한 제어와 보안을 위해 툴킷을 내부적으로 호스팅하는 것을 선호기때문에 펜팟을 자체적으로 호스팅하고 사용하면서 느꼈던 장단접들과 활용 방법을 소개하도록 하겠습니다.
+디자인 도구로써 다양한 기능을 제공하며, 디자인 프로젝트를 효율적으로 관리할 수 있습니다.<br>
+저는 완전한 제어와 보안을 위해 툴킷을 내부적으로 호스팅 하는 것을 선호기 때문에 펜팟을 자체적으로 호스팅하고 사용하면서 느꼈던 장단점들과 활용 방법을 소개하도록 하겠습니다.
 
 ## 셀프호스팅
 ### Docker로 설치
 penpot은 Elestio와 Docker로 설치가 가능합니다.<br>
-저는 윈도우(Window)환경에서 개발을하기때문에 도커 데스크탑(Docker Desktop)에서 WSL2(Linux용 Windows 하위 시스템, 버전 2)를 사용하도록 설정하여 Linux 컨테이너를 실행하는 환경에서 설치를하였습니다.<br>
-WSL2에서 별도로 Docker 인스턴스를 설치하고 실행할수 있지만, 저는 초보자이기 때문에 Docker와 관련된 모든 설정을 수동으로 해야하며 도커 데스크탑의 GUI를 통하여 관리하는 기능보다 부족하고 모든 작업을 CLI를 통해 작업할 자신이없었습니다.<br>
-그러므로 Windows용 Docker Desktop에서 지원되는 WSL2를 사용하여 Linux기반 개발 환경에서 작업을 해야하기때문에 WSL2 활성화 후에 Windows에 Linux를 설치하는 방법을 알아보겠습니다.<br>
+저는 윈도우(Windows) 환경에서 개발을 하기 때문에 도커 데스크톱(Docker Desktop)에서 WSL2(Linux 용 Windows 하위 시스템, 버전 2)를 사용하도록 설정하여 Linux 컨테이너를 실행하는 환경에서 설치를 하였습니다.<br>
+WSL2에서 별도로 Docker 인스턴스를 설치하고 실행할 수 있지만, 저는 초보자이기 때문에 Docker와 관련된 모든 설정을 수동으로 해야 하며 도커 데스크톱의 GUI를 통하여 관리하는 기능보다 부족하고 모든 작업을 CLI를 통해 작업할 자신이 없었습니다.<br>
+그러므로 Windows용 Docker Desktop에서 지원되는 WSL2를 사용하여 Linux 기반 개발 환경에서 작업을 해야하기때문에 WSL2 활성화 후에 Windows에 Linux를 설치하는 방법을 알아보겠습니다.<br>
 
 | **항목** | **설명** |
 | :---: | :--- |
-| **Docker** | 소프트웨어를 실행하는 데 필요한 모든 파일, 라이브러리, 설정 파일 등을 포함하는 패키지를 컨테이너라하는데, <br>컨테이너 기반의 오픈소스 가상화 시스템이다.|
+| **Docker** | 소프트웨어를 실행하는 데 필요한 모든 파일, 라이브러리, 설정 파일 등을 포함하는 패키지를 컨테이너라 하는데, <br>컨테이너 기반의 오픈소스 가상화 시스템이다.|
 | **Docker Desktop** | Windows 및 macOS 운영 체제에서 Docker를 쉽게 설치하고 사용할 수 있게 해주는 애플리케이션 |
 | **WSL** | Windows 운영 체제에서 Linux 커널을 실행할 수 있게 해주는 기능 |
 
@@ -80,26 +80,26 @@ WSL2에서 별도로 Docker 인스턴스를 설치하고 실행할수 있지만,
     ```
 
 #### [penpot 패치후 시작하기](https://help.penpot.app/technical-guide/getting-started/#start-penpot)
-Penpot은 Docker compose(v2)라는 Docker 컨테이너들을 정의하고 실행하기 위한 도구를 통해 Penpot 저장소에서 'docker-compose.yaml'파일을 다운로드하여 실행해야합니다.<br>
-그러러면 Docker compose(v2)이라는 플러그인도 설치가 필요하겠죠?? wsl에서 docker 엔진으로 설치했더라면, Docker compose도 따로 명령어를 통해 설치하고 복잡한 과정을 걸처야합니다.<br>
-그치만 Docker Desktop을 통해서 따로 설치할 필요없이 배포되어있기때문에 명령어를 'docker-compose.yaml'파일만 다운로드 하면 됩니다.<br>
+Penpot은 Docker compose(v2)라는 Docker 컨테이너들을 정의하고 실행하기 위한 도구를 통해 Penpot 저장소에서 'docker-compose.yaml'파일을 다운로드하여 실행해야 합니다.<br>
+그러려면 Docker compose(v2)이라는 플러그인도 설치가 필요하겠죠?? wsl에서 docker 엔진으로 설치했더라면, Docker compose도 따로 명령어를 통해 설치하고 복잡한 과정을 걸쳐야 합니다.<br>
+그렇지만 Docker Desktop을 통해서 따로 설치할 필요 없이 배포되어 있기 때문에 명령어를 'docker-compose.yaml'파일만 다운로드 하면 됩니다.<br>
 
 1. 설치한 Ubuntu에서 'docker-compose.yaml'파일을 다운로드
     * window의 WSL2에서 설치한 Ubuntu를 실행하여 다운로드합니다.
-    * docker-compose.yaml를 설치할 파일경로는 따로 신경쓰실필요없어요~!
-    * wget:인터넷에서 파일을 다운로드할 때 사용되는 명령줄 도구
+    * docker-compose.yaml를 설치할 파일 경로는 따로 신경 쓰실 필요 없어요~!
+    * wget:인터넷에서 파일을 다운로드할 때 사용되는 명령 줄 도구
     ```
    wget https://raw.githubusercontent.com/penpot/penpot/main/docker/images/docker-compose.yaml
     ```
     ![images_6.JPG](/assets/images/penpot/images_6.JPG)
 
-    * 실질적으로 ubuntu의 파일경로는 window에서 가상시스템을 뛰운거기때문에 파일탐색기를 열어보면 확인하실수있습니다.(Ubuntu 실행명령어에서 'll'을 쳤을때 실제 경로예요~!)
+    * 실질적으로 ubuntu의 파일 경로는 window에서 가상 시스템을 띄운 거기때문에 파일 탐색기를 열어보면 확인하실 수 있습니다.(Ubuntu 실행명령어에서 'll'을 쳤을 때 실제 경로예요~!)
     ![images_7.JPG](/assets/images/penpot/images_7.JPG)
 
 2. penpot 서비스 실행하기 
-    * 항상 docker compose를 통하여 명령어(cli)를 실행할땐 'Docker Desktop'파일이 실행되고있어야합니다.
-    * Ubuntu에서 명령어를 펜팟 서비스를 실행시키는 명령어를 실행시키고, http://localhost:9001 에 접속을합니다 
-    * 포트 '9001'은 wget으로 설치한 'docker-compose.yaml'파일에 기본으로 설정되어있고, 변경해서 사용할수 있어요~!
+    * 항상 docker compose를 통하여 명령어(cli)를 실행할 땐 'Docker Desktop'파일이 실행되고 있어야 합니다.
+    * Ubuntu에서 명령어를 펜팟 서비스를 실행시키는 명령어를 실행시키고, http://localhost:9001에 접속을 합니다. 
+    * 포트 '9001'은 wget으로 설치한 'docker-compose.yaml'파일에 기본으로 설정되어 있고, 변경해서 사용할 수 있어요~!
     ```
    docker compose -p penpot -f docker-compose.yaml up -d
     ```
@@ -110,37 +110,37 @@ Penpot은 Docker compose(v2)라는 Docker 컨테이너들을 정의하고 실행
     ```
 
 ### Penpot 구성하기
-penpot의 서비스를 활성화할때는 'Docker Compose'를 사용하여 펜팟의 컨테이너의 이미지, 환경 변수, 볼륨, 네트워크 설정 등을 명시하는 파일인 'docker-compose.yaml'을 통해 실행시켜서 서비스를 활성화했습니다. <br>
-[공식사이트](https://help.penpot.app/technical-guide/developer/) 가이드에 따라 penpot의 구성을 gitlab을 사용하여 인증을 구성하여 로그인할수 있게 옵션을 설정하여 사용하겠습니다.
+penpot의 서비스를 활성화할 때는 'Docker Compose'를 사용하여 펜팟의 컨테이너의 이미지, 환경 변수, 볼륨, 네트워크 설정 등을 명시하는 파일인 'docker-compose.yaml'을 통해 실행시켜서 서비스를 활성화했습니다. <br>
+[공식사이트](https://help.penpot.app/technical-guide/developer/) 가이드에 따라 penpot의 구성을 gitlab을 사용하여 인증을 구성하여 로그인 할 수 있게 옵션을 설정하여 사용하겠습니다.
 
 #### docker-compose.yaml 파일 설정하기
-저는 wget을 통해 'docker-compose.yaml'을 받았습니다. 파일경로는 '\\wsl.localhost\Ubuntu\home\gluesys' 하위에속해있구요. <br>
-해당파일의 확장자는 'yaml'파일이기때문에 'docker-compose.yaml'파일의 속성에 들어가서 연결프로그램을 '메모장'으로 변경후 파일내용을 수정을 했습니다.
+저는 wget을 통해 'docker-compose.yaml'을 받았습니다. 파일 경로는 '\\wsl.localhost\Ubuntu\home\gluesys' 하위에 속해있고, <br>
+해당 파일의 확장자는 'yaml'파일이기 때문에 'docker-compose.yaml'파일의 속성에 들어가서 연결 프로그램을 '메모장'으로 변경 후 파일 내용을 수정을 했습니다.
 
 * 수정된 내용은 'penpot-frontend'와 'penpot-backend'입니다. 
-    * 첫번째로 'penpot-frontend'밑에줄에보면 PENPOT_FLAGS라는 부분이있습니다. 여기서 'disable-secure-session-cookies disable-login enable-login-with-gitlab disable-registration'로 정의했고 
-    * 두번째는 'penpot-backend'밑에줄에 PENPOT_FLAGS에다가 'disable-secure-session-cookies disable-login enable-login-with-gitlab' 로 정의했구요 
-    * 세번째는 Gitlab에 인증관련된 내용 'PENPOT_GITLAB_BASE_URI, PENPOT_GITLAB_CLIENT_ID, PENPOT_GITLAB_CLIENT_SECRET'를 설정해주었습니다.
+    * 첫 번째로 'penpot-frontend'밑에 줄에 보면 PENPOT_FLAGS라는 부분이 있습니다. 여기서 'disable-secure-session-cookies disable-login enable-login-with-gitlab disable-registration'로 정의했습니다.
+    * 두 번째는 'penpot-backend'밑에 줄에 PENPOT_FLAGS에다가 'disable-secure-session-cookies disable-login enable-login-with-gitlab' 로 정의했습니다.
+    * 세 번째는 Gitlab에 인증 관련된 내용 'PENPOT_GITLAB_BASE_URI, PENPOT_GITLAB_CLIENT_ID, PENPOT_GITLAB_CLIENT_SECRET'를 설정해 주었습니다.
 
 [docker-compose.yaml](/assets/images/penpot/docker-compose.yaml)
 
-* 이렇게 옵션을 설정하였다 계정생성 버튼은 없어지고 '깃랩(GitLab)' 버튼이 생겼을겁니다.
+* 이렇게 옵션을 설정하였다 계정 생성 버튼은 없어지고 '깃랩(GitLab)' 버튼이 생겼을 겁니다.
 ![images_9.JPG](/assets/images/penpot/images_9.JPG)
 
-#### 깃랩에 penpot 인증할 애플리케이션 생성후 docker-compose.yaml 인증 등록
+#### 깃랩에 penpot 인증할 애플리케이션 생성 후 docker-compose.yaml 인증 등록
 1. 깃랩 로그인 - 사용자 설정 - 어플리케이션 - [새 애플리케이션 추가]
 ![images_10.JPG](/assets/images/penpot/images_10.JPG)
     * 이름은 : Penpot
     * Redirect URL은 : http://localhost/api/auth/oauth/gitlab/callback
     * 옵션 체크(선택) : read_user, openid, profile, email
     ![images_11.JPG](/assets/images/penpot/images_11.JPG)
-    여기서 Redirect URL는 깃랩을통해 로그인후 파라미터로 접속할 URI입니다. <br>
-    센스있는 사용자라면 'localhost'가아닌 자신의 펜팟설치한 IP로 기입하셔야한다는걸 눈치채셨을겁니다.<br>
+    여기서 Redirect URL는 깃랩을통해 로그인 후 파라미터로 접속할 URI입니다. <br>
+    센스 있는 사용자라면 'localhost'가 아닌 자신의 펜팟설치한 IP로 기입하셔야 한다는걸  눈치채셨을 겁니다.<br>
 
 2. 인증키 복사
 * 애플리케이션 ID 와 비밀키를 복사를 합니다.
  ![images_12.JPG](/assets/images/penpot/images_12.JPG)
-* 여기서 복사한 내용은 'docker-compose.yaml'파일에서 'PENPOT_GITLAB_CLIENT_ID, PENPOT_GITLAB_CLIENT_SECRET' 에 입력후 저장한후 penpot 서비스를 재실행합니다.
+* 여기서 복사한 내용은 'docker-compose.yaml'파일에서 'PENPOT_GITLAB_CLIENT_ID, PENPOT_GITLAB_CLIENT_SECRET'에 입력 후 저장하여 penpot 서비스를 재실행합니다.
 
     ```
     # Backend & Frontend
@@ -152,43 +152,43 @@ penpot의 서비스를 활성화할때는 'Docker Compose'를 사용하여 펜�
     PENPOT_GITLAB_CLIENT_SECRET=<client-secret>
     ```
 
-* 마지막으로 서비스 접속후 - [깃랩(GitLab)] 클릭 - 인증 - 로그인하면 끝 ~!
+* 마지막으로 서비스 접속 후 - [깃랩(GitLab)] 클릭 - 인증 - 로그인하면 끝 ~!
 ![images_13.JPG](/assets/images/penpot/images_13.JPG)
 
 
 ## '펜팟(Penpot)' 활용하기
-이제는 '펜팟(Penpot)'에서 제공하는 라이브러리를 다운받고 해당 디자인 템플릿을 활용해 간단한 로그인페이지의 목업작업을 하는 방법을 소개하도록 하겠습니다. <br>
-라이브러리를 다운받고, 라이브러리안에 마음에 드는 템플릿을 공유해 개인 프로젝트에서 해당 디자인을 활용해서 작업을 할 것입니다. <br>
-[펜팟에서 제공되는 라이브러리](https://penpot.app/libraries-templates) 중에서 저는 'Firefox mockup'와 'Penpot Design System' 이라는 라이브러리를 사용하겠습니다.
+이제는 '펜팟(Penpot)'에서 제공하는 라이브러리를 다운로드하고 해당 디자인 템플릿을 활용해 간단한 로그인 페이지의 목업 작업을 하는 방법을 소개하도록 하겠습니다. <br>
+라이브러리를 다운로드하고, 라이브러리 안에 마음에 드는 템플릿을 공유해 개인 프로젝트에서 해당 디자인을 활용해서 작업을 할 것입니다. <br>
+[펜팟에서 제공되는 라이브러리](https://penpot.app/libraries-templates) 중에서 저는 'Firefox mockup'와 'Penpot Design System'이라는 라이브러리를 사용하겠습니다.
 
 ### [라이브러리](https://penpot.app/libraries-templates) 다운로드
-1. 해당 홈페이지에서 'Firefox mockup'와 'Penpot Design System' 를 다운받습니다.
+1. 해당 홈페이지에서 'Firefox mockup'와 'Penpot Design System'를 다운로드합니다.
 ![images_14.JPG](/assets/images/penpot/images_14.JPG)
 ![images_15.JPG](/assets/images/penpot/images_15.JPG)
 
 2. 다운로드한 라이브러리를 추가를 해줍니다.
 * 로그인 - [초안] - 상단 왼쪽 설정 - [Import Penpot files]를 클릭해줍니다.
 ![images_16.JPG](/assets/images/penpot/images_16.JPG)
-* 다운받은 라이브러리를 선택후 'Import'를 해줍니다.
- * 인내심을갖고 등록된후 허가까지해주셔야해요~!
+* 다운받은 라이브러리를 선택 후 'Import'를 해줍니다.
+ * 인내심을 갖고 등록된 후 허가까지해주셔야해요~!
 ![images_17.JPG](/assets/images/penpot/images_17.JPG)
 ![images_18.JPG](/assets/images/penpot/images_18.JPG)
 ![images_19.JPG](/assets/images/penpot/images_19.JPG)
-* 해당 라이브러리가 추가가 되었다면 추가된 라이브러리가 나타날것입니다.
+* 해당 라이브러리가 추가가 되었다면 추가된 라이브러리가 나타날 것입니다.
 ![images_20.JPG](/assets/images/penpot/images_20.JPG)
 
 3. 디자인 템플릿을 공유하기
-개인 프로젝트에서 사용하기위해 'Firefox mockup'에서 인터넷창 디자인을 선택해서 공유를 해보겠습니다.
+개인 프로젝트에서 사용하기 위해 'Firefox mockup'에서 인터넷 창 디자인을 선택해서 공유를 해보겠습니다.
 
-* 'Firefox mockup'라이브러리를 선택합니다.(더블클릭을 해주셔야해요~!)
+* 'Firefox mockup'라이브러리를 선택합니다.(더블클릭을 해주셔야 해요~!)
 ![images_21.JPG](/assets/images/penpot/images_21.JPG)
 ![images_22.JPG](/assets/images/penpot/images_22.JPG)
 
 * [LAYERS] - [templates] - [light] 우클릭 - [Create component] 클릭을 해줍니다.
-저는 하얀색을 좋아하기때문에 밝은색 인터넷창의 디자인을 선택할게요~!
+저는 하얀색을 좋아하기 때문에 밝은색 인터넷 창의 디자인을 선택할게요~!
 ![images_23.JPG](/assets/images/penpot/images_23.JPG)
 
-* [ASSETS] - 좌측하단[COMPONENTS] 에서 방금 선택한 디자인이 추가가 되었는지 확인합니다.
+* [ASSETS] - 좌측하단[COMPONENTS]에서 방금 선택한 디자인이 추가가 되었는지 확인합니다.
 ![images_24.JPG](/assets/images/penpot/images_24.JPG)
 
 자 이제는 로그인폼에 대한 디자인을 선택해서 공유를 해보겠습니다. 똑같은 방법이니 빠르게 넘어가셔도되요~! <br>
@@ -199,29 +199,37 @@ penpot의 서비스를 활성화할때는 'Docker Compose'를 사용하여 펜�
 
 * [LAYERS] - [PAGES] - [Login] 우클릭 - [Create component] 클릭을 해줍니다.
 ![images_27.JPG](/assets/images/penpot/images_27.JPG)
-* [ASSETS] - 좌측하단[COMPONENTS] 에서 방금 선택한 디자인이 추가가 되었는지 확인합니다.
+* [ASSETS] - 좌측하단[COMPONENTS]에서 방금 선택한 디자인이 추가가 되었는지 확인합니다.
 ![images_28.JPG](/assets/images/penpot/images_28.JPG)
 
-* 대쉬보드 페이지 - [초안] - [해당 라이브러리 우클릭] - [공유 라이브러리로 추가하기] 클릭을 해줍니다.
+* 대시보드 페이지 - [초안] - [해당 라이브러리 우클릭] - [공유 라이브러리로 추가하기] 클릭을 해줍니다.
 ![images_29.JPG](/assets/images/penpot/images_29.JPG)
 
-4. 개인 프로젝트에서 공유로 설정한 디자인으로 목업작업
-자 다시그러면 대시보드(매인페이지) 페이지로 돌아와 프로젝트를 생성해보겠습니다.
-* [NEW PROJECT] 버튼 클릭후 생성된 프로젝트를 클릭해줍니다.(저는 'Login' 이라 할게요!)
+4. 개인 프로젝트에서 공유로 설정한 디자인으로 목업 작업
+자 다시 그러면 대시보드(매인페이지) 페이지로 돌아와 프로젝트를 생성해 보겠습니다.
+* [NEW PROJECT] 버튼 클릭 후 생성된 프로젝트를 클릭해 줍니다.(저는 'Login'이라 할게요!)
 ![images_30.JPG](/assets/images/penpot/images_30.JPG)
 * [ASSETS] - [LIBRARIES] - 'Firefox mockup'와 'Penpot Design System' 추가를 해줍니다.
 ![images_31.JPG](/assets/images/penpot/images_31.JPG)
 * 공유된 라이브러리를 확인합니다.
 ![images_32.JPG](/assets/images/penpot/images_32.JPG)
-* 'Firefox mockup' 라이브러리에 생성한 인터넷창의 디자인 컴포넌트를 가운데 화면으로 드래그해줍니다.
+* 'Firefox mockup' 라이브러리에 생성한 인터넷 창의 디자인 컴포넌트를 가운데 화면으로 드래그해줍니다.
 ![images_33.JPG](/assets/images/penpot/images_33.JPG)
-자 이러면 인터넷창의 디자인 UI 목업이 추가를 하였으니 penpot의 로그인 디자인도 입혀보겠습니다.
-* 'Penpot Design System' 라이브러리에 생성한 로그인폼 디자인 컴포넌트를 가운데 화면으로 드래그해줍니다.
+자 이러면 인터넷 창의 디자인 UI 목업이 추가를 하였으니 penpot의 로그인 디자인도 입혀보겠습니다.
+* 'Penpot Design System' 라이브러리에 생성한 로그인 폼 디자인 컴포넌트를 가운데 화면으로 드래그해줍니다.
 ![images_34.JPG](/assets/images/penpot/images_34.JPG)
 
-로그인폼 디자인과 인터넷창디자인의 규격이 안맞을텐데 이부분은 잘 사이즈맞춰서 해주셔야해요~!
-* 로그인폼 목업작업
+로그인 폼 디자인과 인터넷 창 디자인의 규격이 안맞을텐데 이부분은 잘 사이즈 맞춰서 해주셔야 해요~!
+* 로그인 폼 목업 작업
 ![images_35.JPG](/assets/images/penpot/images_35.JPG)
 
 # 마치면서
-이 글에서 다루지 못한 'pnepot'의 기능과 디자인작업에 대한 내용들이 많이 있습니다. <br>
+전 디자이너가 아니다 보니 제한적으로 몇몇 기능만 사용하고 있는 상황에서 다루지 못한 'pnepot'의 기능과 디자인 작업에 대한 내용들이 많이 있습니다. <br>
+'펜팟(penpot)'을 사용하면서 디자인 템플릿(CSS, SVG, HTML 등의 디자인 요소)으로 네이티브 하게 표현함으로써, 디자인에서 개발과정으로 별도의 작업 없이 인터페이스에서 바로 작업하는 장점은 최고의 장점이라 봅니다. <br> 
+물론 Penpot의 클라이언트와 서버 모두 느리고 비효율적인 부분도 있고, 신생 프로젝트인 만큼,  안정성이나 성능 면에서는 기존 도구들에 비해 부족할 수 도 있습니다.<br>
+ 
+>작업하면서 텍스트삽입중 영어가 아닌 언어(한글)로 입력에 대한 버그도있으니 주의하세요.
+* 이 이슈는 'penpot'에서 알려진 이슈입니다.
+* 한글로 text 편집시엔 천천히입력하셔야합니다.
+
+그치만 개발 중심의 조직이라면 별도의 비용없이 자체적으로 호스팅하여 사용할수 있단점에선 최고의 장점이 않을까 생각합니다.
