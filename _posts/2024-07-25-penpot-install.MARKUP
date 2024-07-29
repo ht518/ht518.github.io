@@ -1,7 +1,6 @@
 ---
 category: 목업
 title:  "Penpot Inastall"
-tags: [테스트 jekyll 블로그입니다.]
 ---
 
 {% link _posts/2024-07-25-penpot-install.md %}
