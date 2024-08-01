@@ -11,6 +11,7 @@
 
 ## 셀프호스팅
 ### Docker로 설치
+
 penpot은 Elestio와 Docker로 설치가 가능합니다.<br>
 저는 윈도우(Windows) 환경에서 개발을 하기 때문에 도커 데스크톱(Docker Desktop)에서 WSL2(Linux 용 Windows 하위 시스템, 버전 2)를 사용하도록 설정하여 Linux 컨테이너를 실행하는 환경에서 설치를 하였습니다.<br>
 WSL2에서 별도로 Docker 인스턴스를 설치하고 실행할 수 있지만, 저는 초보자이기 때문에 Docker와 관련된 모든 설정을 수동으로 해야 하며 도커 데스크톱의 GUI를 통하여 관리하는 기능보다 부족하고 모든 작업을 CLI를 통해 작업할 자신이 없었습니다.<br>
@@ -24,6 +25,7 @@ WSL2에서 별도로 Docker 인스턴스를 설치하고 실행할 수 있지만
 
 
 #### wls2 활성화후 Windows에 Linux를 설치
+
 1. window - PowerShell - 관리자로 실행을 시켜줍니다.
 ![images_1.JPG](/assets/images/penpot/images_1.JPG)
 
@@ -58,6 +60,7 @@ WSL2에서 별도로 Docker 인스턴스를 설치하고 실행할 수 있지만
     ```
 
 #### Docker Desktop설치 및 wls2 설정
+
 1. [docker desktop](https://www.docker.com/products/docker-desktop/) 공식홈페이지에서 [Download for Windows]를 클릭하여 다운로드하고 설치합니다.
 ![images_2.JPG](/assets/images/penpot/images_2.JPG)
 
@@ -80,6 +83,7 @@ WSL2에서 별도로 Docker 인스턴스를 설치하고 실행할 수 있지만
     ```
 
 #### [penpot 패치후 시작하기](https://help.penpot.app/technical-guide/getting-started/#start-penpot)
+
 Penpot은 Docker compose(v2)라는 Docker 컨테이너들을 정의하고 실행하기 위한 도구를 통해 Penpot 저장소에서 'docker-compose.yaml'파일을 다운로드하여 실행해야 합니다.<br>
 그러려면 Docker compose(v2)이라는 플러그인도 설치가 필요하겠죠?? wsl에서 docker 엔진으로 설치했더라면, Docker compose도 따로 명령어를 통해 설치하고 복잡한 과정을 걸쳐야 합니다.<br>
 그렇지만 Docker Desktop을 통해서 따로 설치할 필요 없이 배포되어 있기 때문에 명령어를 'docker-compose.yaml'파일만 다운로드 하면 됩니다.<br>
@@ -110,10 +114,12 @@ Penpot은 Docker compose(v2)라는 Docker 컨테이너들을 정의하고 실행
     ```
 
 ### Penpot 구성하기
+
 penpot의 서비스를 활성화할 때는 'Docker Compose'를 사용하여 펜팟의 컨테이너의 이미지, 환경 변수, 볼륨, 네트워크 설정 등을 명시하는 파일인 'docker-compose.yaml'을 통해 실행시켜서 서비스를 활성화했습니다. <br>
 [공식사이트](https://help.penpot.app/technical-guide/developer/) 가이드에 따라 penpot의 구성을 gitlab을 사용하여 인증을 구성하여 로그인 할 수 있게 옵션을 설정하여 사용하겠습니다.
 
 #### docker-compose.yaml 파일 설정하기
+
 저는 wget을 통해 'docker-compose.yaml'을 받았습니다. 파일 경로는 '\\wsl.localhost\Ubuntu\home\gluesys' 하위에 속해있고, <br>
 해당 파일의 확장자는 'yaml'파일이기 때문에 'docker-compose.yaml'파일의 속성에 들어가서 연결 프로그램을 '메모장'으로 변경 후 파일 내용을 수정을 했습니다.
 
@@ -128,6 +134,7 @@ penpot의 서비스를 활성화할 때는 'Docker Compose'를 사용하여 펜�
 ![images_9.JPG](/assets/images/penpot/images_9.JPG)
 
 #### 깃랩에 penpot 인증할 애플리케이션 생성 후 docker-compose.yaml 인증 등록
+
 1. 깃랩 로그인 - 사용자 설정 - 어플리케이션 - [새 애플리케이션 추가]
 ![images_10.JPG](/assets/images/penpot/images_10.JPG)
     * 이름은 : Penpot
@@ -157,11 +164,13 @@ penpot의 서비스를 활성화할 때는 'Docker Compose'를 사용하여 펜�
 
 
 ## '펜팟(Penpot)' 활용하기
+
 이제는 '펜팟(Penpot)'에서 제공하는 라이브러리를 다운로드하고 해당 디자인 템플릿을 활용해 간단한 로그인 페이지의 목업 작업을 하는 방법을 소개하도록 하겠습니다. <br>
 라이브러리를 다운로드하고, 라이브러리 안에 마음에 드는 템플릿을 공유해 개인 프로젝트에서 해당 디자인을 활용해서 작업을 할 것입니다. <br>
 [펜팟에서 제공되는 라이브러리](https://penpot.app/libraries-templates) 중에서 저는 'Firefox mockup'와 'Penpot Design System'이라는 라이브러리를 사용하겠습니다.
 
 ### [라이브러리](https://penpot.app/libraries-templates) 다운로드
+
 1. 해당 홈페이지에서 'Firefox mockup'와 'Penpot Design System'를 다운로드합니다.
 ![images_14.JPG](/assets/images/penpot/images_14.JPG)
 ![images_15.JPG](/assets/images/penpot/images_15.JPG)
@@ -224,6 +233,7 @@ penpot의 서비스를 활성화할 때는 'Docker Compose'를 사용하여 펜�
 ![images_35.JPG](/assets/images/penpot/images_35.JPG)
 
 # 마치면서
+
 전 디자이너가 아니다 보니 제한적으로 몇몇 기능만 사용하고 있는 상황에서 다루지 못한 'pnepot'의 기능과 디자인 작업에 대한 내용들이 많이 있습니다. <br>
 '펜팟(penpot)'을 사용하면서 디자인 템플릿(CSS, SVG, HTML 등의 디자인 요소)으로 네이티브 하게 표현함으로써, 디자인에서 개발과정으로 별도의 작업 없이 인터페이스에서 바로 작업하는 장점은 최고의 장점이라 봅니다. <br> 
 물론 Penpot의 클라이언트와 서버 모두 느리고 비효율적인 부분도 있고, 신생 프로젝트인 만큼,  안정성이나 성능 면에서는 기존 도구들에 비해 부족할 수 도 있습니다.<br>
@@ -235,6 +245,7 @@ penpot의 서비스를 활성화할 때는 'Docker Compose'를 사용하여 펜�
 그렇지만 개발 중심의 조직이라면 별도의 비용 없이 자체적으로 호스팅 하여 사용할 수 있다는 점에선 최고의 장점이 않을까 생각합니다.
 
 ## 참고 링크 및 자료
+
 * [Penpot 공식사이트](https://penpot.app/)
 * [Penpot Self-host](https://penpot.app/self-host)
 * [Penpot 사용자가이드](https://help.penpot.app/user-guide/libraries/)
